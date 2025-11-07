@@ -3,7 +3,7 @@ This app will showcase my profile
 
 # Part 2 - Deployment
 ## Live Link
-https://Ariana-UAalbany.github.io/profiles-app/
+https://ariana-ualbany.github.io/profiles-app/
 
 
 # React + Vite
