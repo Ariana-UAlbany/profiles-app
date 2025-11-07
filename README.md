@@ -1,6 +1,11 @@
 # Part 1 - App Description
 This app will showcase my profile
 
+# Part 2 - Deployment
+## Live Link
+https://Ariana-UAalbany.github.io/profiles-app/
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
