@@ -1,3 +1,16 @@
+import Container from 'react-bootstrap/Container';
+import Alert from 'react-bootstrap/Alert';
+
+export default function App() {
+  return (
+    <Container className="py-5">
+      <Alert variant="primary" className="text-center mb-0">
+        Hello React
+      </Alert>
+    </Container>
+  );
+}
+/*
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,3 +46,4 @@ function App() {
 }
 
 export default App
+*/

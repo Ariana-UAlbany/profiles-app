@@ -1,3 +1,6 @@
+# Part 1 - App Description
+This app will showcase my profile
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
