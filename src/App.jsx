@@ -4,11 +4,27 @@ import Col from 'react-bootstrap/Col';
 import ProfileCard from './components/ProfileCard.jsx';
 import { profiles } from './data/profiles.js';
 import { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+
 
 export default function App() {
   const [people, setPeople] = useState(profiles);
+  const [name, setName] = useState('');
+  const [error, setError] = useState(false);
   function incrementLikes(id){
     setPeople(ps => ps.map(p => p.id===id? { ...p, likes: p.likes+1 } : p));
+  }
+  function addNewProfile(formEntry){
+    formEntry.preventDefault();
+    const trimmed = name.trim();
+    const exists = people.some(p => p.name.toLowerCase()===trimmed.toLowerCase());
+    if (!trimmed || exists) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    setPeople(ps => [...ps, { id: Date.now(), name: trimmed, likes: 0 }]);
+    setName('');
   }
 
   return (
@@ -22,6 +38,21 @@ export default function App() {
           </Col>
         ))}
       </Row>
+
+      <Form onSubmit={addNewProfile} className="mb-4 d-flex justify-content-center">
+        <Form.Control
+          type="text"
+          placeholder="Enter name"
+          value={name}
+          onChange={formEntry => setName(formEntry.target.value)}
+          isInvalid={error}
+          style={{ maxWidth: '300px', marginRight: '0.5rem' }}
+        />
+        <button type="submit">Add Profile</button>
+        <Form.Control.Feedback type="invalid">
+          Name is required and must be unique!
+        </Form.Control.Feedback>
+      </Form>
     </Container>
   );
 }
