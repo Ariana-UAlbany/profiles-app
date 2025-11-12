@@ -12,7 +12,7 @@ export default function App() {
   }
 
   return (
-    <Container fluid className="py-4">
+    <Container className="py-4">
       <h1 className="mb-4 text-center">Profiles</h1>
       <Row xs={1} md={2} lg={3}>
         {people.map(p => (
